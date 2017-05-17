@@ -11,7 +11,7 @@ public class Main {
 
         Connection connection = new CommonConnection();
 
-        CreateClientResponse createClientResponse = connection.send(conn -> {
+        CreateClientResponse createClientResponse = connection.process(conn -> {
             AuthResponse response = conn.send(new AuthRequest("login"));
             CreateClientResponse response2 = conn.send(new CreateClientRequest(101));
             conn.close();

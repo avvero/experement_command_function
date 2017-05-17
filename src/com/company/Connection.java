@@ -7,7 +7,7 @@ public interface Connection {
 
     <R extends Response> R send(Request request);
 
-    <R extends Response> R send(Command<R> command);
+    <R extends Response> R process(Command<R> command);
 
     void close();
 

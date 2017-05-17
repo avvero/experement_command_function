@@ -11,7 +11,7 @@ public class OneTimeConnection implements Connection {
         return null;
     }
 
-    public <R extends Response> R send(Command<R> command) {
+    public <R extends Response> R process(Command<R> command) {
         return command.process(this);
     }
 

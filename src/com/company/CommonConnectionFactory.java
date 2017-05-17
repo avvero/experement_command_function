@@ -13,7 +13,7 @@ public class CommonConnectionFactory implements ConnectionFactory {
     @Override
     public Connection getConnection() {
         Connection connection = new CommonConnection();
-        connection.send(conn -> {
+        connection.process(conn -> {
             AuthResponse response = conn.send(new AuthRequest("login"));
             CreateClientResponse response2 = conn.send(new CreateClientRequest(101));
             return null;
